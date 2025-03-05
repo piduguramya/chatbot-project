@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+   
+</head>
+<style>
+ body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+
+</style>
+<body>
+    <!------ register----------------------------------------------------------------------- -->
+    <form method="post">            
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="email" required>
+        <input type="password" name="password" placeholder="password" required>
+        <input type="password" name="reenterpassword" placeholder="Re-enter Password" required>        
+        <input type="submit" value="submit">
+        <p>already have an account <a href="./login.html">Login</a></p>
+        <p id="response-message" style="color: green; margin-top: 10px; font-size: 20px;"></p>    
+    </form>
+
+    <script>
+    let form=document.forms[0]             
+    let alert=document.getElementById("alert")
+    let messageElement = document.getElementById("response-message");
+    
+    
+    form.addEventListener("submit", async (e) => { 
+        e.preventDefault();
+        
+        let user = {
+            username: e.target[0].value,
+            email: e.target[1].value,
+            password: e.target[2].value,
+        };
+        
+        if (user.password !== e.target[3].value.trim()) {
+            messageElement.style.color = "red";
+            messageElement.textContent = "Passwords do not match!";
+            return;
+        }
+        
+        
+        
+        try {
+        let response = await fetch("http://localhost:4000/page/reg", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(user),
+        });
+
+        let responseText = await response.text();
+        console.log(responseText );
+        
+        
+        // Display the response text below the submit button
+
+        if (response.ok) {
+            messageElement.style.color = "green";
+        } else {
+            messageElement.style.color = "red";
+        }
+        messageElement.textContent = responseText; 
+        console.log(user);  
+        console.log(responseText);
+
+        
+    } catch (error) {                       
+        document.getElementById("response-message").style.color = "red";
+        document.getElementById("response-message").textContent = "An error occurred. Please try again.";
+        console.error("Error:", error);
+    }
+});  
+
+
+    </script>
+
+</body>
+</html>

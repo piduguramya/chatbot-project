@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover AI</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1e1e1e, #4b0082);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Content Container */
+        div{
+            max-width: 800px;
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff6f61;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff4b4b;
+        }
+
+        /* Button with Animation */
+        .start-button {
+            margin-top: 1.5rem;
+            padding: 0.8rem 2rem;
+            background: #ff6f61;
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: popIn 2s ease-out;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .start-button:hover {
+            background: #ff4b4b;
+            transform: scale(1.05);
+        }
+
+        /* Back Button */
+        .back-btn {
+            margin-top: 2rem;
+            padding: 0.8rem 2rem;
+            background: #6a00ad;
+            border: none;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-btn:hover {
+            background: #9b00ff;
+            transform: scale(1.05);
+        }
+
+        /* Floating Animation */
+        .floating-graphic {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 111, 97, 0.5);
+            border-radius: 50%;
+            filter: blur(100px);
+            animation: moveAround 10s infinite alternate ease-in-out;
+        }
+
+        .floating-graphic:nth-child(2) {
+            top: 70%;
+            left: 80%;
+            width: 200px;
+            height: 200px;
+            background: rgba(106, 0, 173, 0.5);
+        }
+
+        .floating-graphic:nth-child(3) {
+            top: 50%;
+            left: 30%;
+            width: 120px;
+            height: 120px;
+            background: rgba(75, 0, 130, 0.5);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveAround {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Graphics for Background Effect -->
+    <div class="floating-graphic"></div>
+    <div class="floating-graphic"></div>
+    <div class="floating-graphic"></div>
+
+    <!-- Content Section -->
+    <div class="d1">
+        <h1>Unleashing the Power of AI</h1>
+        <p>
+            Artificial Intelligence (AI) is redefining the future. From autonomous cars to personal assistants, AI powers the innovations that shape our world.
+            Explore groundbreaking concepts like neural networks, deep learning, and natural language processing that are revolutionizing industries and improving lives.
+        </p>
+        <p>
+            Curious to learn more? <a href="https://www.ibm.com/topics/artificial-intelligence" target="_blank">Dive Deeper Into AI!</a>
+        </p>
+        <button class="start-button">Start Chatting</button>
+    </div>
+    <div class="d2">
+        <h1>Interactive and Engaging Chats Await!📱</h1>
+        <p>Step into the future with personalized, fun, and intelligent conversations. Ready to start?</p>
+        <button class="start-button">Start Chatting</button>
+    </div>
+    <div class="d3">
+        <h1>Your Smart Assistant is Here😉</h1>
+        <p>Let me help you with your tasks, questions, and more. Ready to explore?</p>
+        <button class="start-button">Get Started</button>
+    </div>
+    <div class="d4">
+        <h1>AI Made Simple and Fun for You😜</h1>
+        <p>Let me help you with your tasks, questions, and more. Ready to explore?</p>
+        <button class="start-button">Get Started</button>
+    </div>
+    <div class="d5">
+        <h1>Discover the Power of AI Today🔍</h1>
+        <p>AI is shaping the future, and you can be part of it! Ready to dive in?</p>
+        <button class="start-button">Explore Now</button>
+    </div>
+    <div class="d6">
+        <h1>Interactive and Engaging Chats Await!🗣️</h1>
+        <p>Step into a world of intelligent conversations. Ready to chat?</p>
+        <button class="start-button">Start Chatting</button>
+    </div>
+    <div class="d7">
+        <h1>Use it Wisely!🧠</h1>
+        <p>AI is powerful, and how you use it can shape the future. Ready to explore?</p>
+        <button class="start-button">Start Exploring</button>
+    </div>
+    <div class="d8">
+        <h1>Have Some Fun When Bored🎉</h1>
+        <p>Explore, create, and play. AI can bring the fun to you!</p>
+        <button class="start-button">Start Playing</button>
+    </div>
+    <div class="d9">
+        <h1>Ask Me Anything, Anytime!⌚</h1>
+        <p>Got a question? I’m here 24/7 to assist you with anything!</p>
+        <button class="start-button">Start Chatting</button>
+    </div>
+    <div class="d10">
+        <h1>I'm Here to Assist You✋</h1>
+        <p>Whatever you need, I’m just a click away. Let’s get started!</p>
+        <button class="start-button">Get Assistance</button>
+    </div>
+
+
+    <!-- Back Button -->
+    <button class="back-btn" onclick="window.location.href=`index.html`">Back to Home</button>
+    <script>
+        // Get the ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
+
+        // Get all content divs
+        const allDivs = document.querySelectorAll(".d1, .d2, .d3, .d4, .d5, .d6, .d7, .d8, .d9, .d10");
+
+        // Hide all divs and show only the one matching the ID
+        allDivs.forEach((div) => {
+            if (div.classList.contains(id)) {
+                div.style.display = "block"; // Show the matching div
+            } else {
+                div.style.display = "none"; // Hide all other divs
+            }
+        });
+
+        let btns=document.getElementsByTagName("button")
+        for (let i = 0; i < btns.length-1; i++) {
+            btns[i].addEventListener("click", () => {
+                window.location.href = `bcopy.html`;
+            });
+        }
+    </script>
+
+    </script>
+</body>
+</html>

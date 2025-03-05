@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scrolling Text</title>
+    <style>
+        /* Import Google font - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #333); /* Dark gradient */
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #e0e0e0; /* Light text color */
+        }
+        h1 {
+            color: #6a0dad; /* Vibrant purple */
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        }
+        .chatbot-toggler {
+            outline: none;
+            border: none;
+            height: 70px;
+            width: 200px;
+            cursor: pointer;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #6a0dad, #4b0082);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 5%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .chatbot-toggler:hover {
+            background: linear-gradient(135deg, #4b0082, #6a0dad); /* Reverse gradient on hover */
+            transform: scale(1.05);
+        }
+        #scrollers1, #scrollers2, #scrollers3 {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 100%;
+            overflow: hidden; /* Ensure content overflows for scrolling */
+            white-space: nowrap;
+            margin-top: 1%;
+        }
+        .scrolling-content1, .scrolling-content2, .scrolling-content3 {
+            display: flex;
+            animation: scrollers 20s linear infinite;
+        }
+        .scrolling-content2 {
+            animation-duration: 15s;
+        }
+        .scrolling-content3 {
+            animation-duration: 25s;
+        }
+        #d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8,#d9, #d10 {                               
+            padding: 10px 20px;
+            border: 2px solid #6a0dad;; /* Darker border */
+            background-color: #2c2c2c; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            cursor: pointer;
+            border-radius: 10px;
+            margin-right: 10px; /* Space between scrolling items */
+            font-weight: 500;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        #d1:hover, #d2:hover, #d3:hover, #d4:hover, #d5:hover, #d6:hover, #d7:hover, #d8:hover,#d9:hover, #d10:hover{
+            background: #6a0dad; /* Highlighted on hover */
+            color: #fff;
+            transform: scale(1.1);
+        }
+        @keyframes scrollers {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="typing-text">INTRODUCING CHATBOT!</h1>
+    <button class="chatbot-toggler" onclick="func()">Wanna Chat With Me</button>
+    <div id="scrollers1">
+        <div class="scrolling-content1">
+            <div id="d1">Discover the power of AI today🤖</div>
+            <div id="d2">Interactive and engaging chats await!📱</div>
+            <div id="d3">Your smart assistant is here😉.</div>
+            <div id="d4">AI made simple and fun for you😜.</div>
+            <div id="d5">Discover the power of AI today🔍.</div>
+            <div id="d6">Interactive and engaging chats await!🗣️</div>
+            <div id="d7">Use it wisely!🧠</div>
+            <div id="d8">Have some fun when bored🎉</div>
+            <div id="d9">Ask me anything, anytime!⌚</div>
+            <div id="d10">I'm here to assist you✋.</div>
+        </div>
+    </div>
+    <div id="scrollers2">
+        <div class="scrolling-content2">
+            <div id="d1">Discover the power of AI today🤖</div>
+            <div id="d6">Interactive and engaging chats await!🗣️</div>
+            <div id="d2">Interactive and engaging chats await!📱</div>
+            <div id="d7">Use it wisely!🧠</div>
+            <div id="d3">Your smart assistant is here😉.</div>
+            <div id="d8">Have some fun when bored🎉</div>
+            <div id="d4">AI made simple and fun for you😜.</div>
+            <div id="d9">Ask me anything, anytime!⌚</div>
+            <div id="d5">Discover the power of AI today🔍.</div>
+            <div id="d10">I'm here to assist you✋.</div>
+        </div>
+    </div>
+    <div id="scrollers3">
+        <div class="scrolling-content3">
+            <div id="d10">I'm here to assist you✋.</div>
+            <div id="d9">Ask me anything, anytime!⌚</div>
+            <div id="d8">Have some fun when bored🎉</div>
+            <div id="d7">Use it wisely!🧠</div>
+            <div id="d6">Interactive and engaging chats await!🗣️</div>
+            <div id="d5">Discover the power of AI today🔍.</div>
+            <div id="d4">AI made simple and fun for you😜.</div>
+            <div id="d3">Your smart assistant is here😉.</div>
+            <div id="d2">Interactive and engaging chats await!📱</div>
+            <div id="d1">Discover the power of AI today🤖</div>
+        </div>
+    </div>
+    <script>
+        const btn=document.querySelector("button")
+        const textElement = document.getElementById("typing-text");
+        const text = textElement.innerText;
+        let index = 0;
+        let adding = true;
+
+        function typeLetters() {
+            if (adding) {
+                textElement.innerHTML = text.slice(0, index + 1);   
+                index++;
+                if (index === text.length) {
+                    adding = false;
+                    setTimeout(typeLetters, 1000);
+                    return;
+                }
+            } else {
+                index--;
+                textElement.innerHTML = text.slice(0, index);
+                if (index === 1) {
+                    adding = true;
+                }
+            }
+            setTimeout(typeLetters, 200);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeLetters);
+
+        function func(){
+            window.open("bcopy.html","_self")
+        }
+
+        let alldivs = document.querySelectorAll("#d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9, #d10");
+
+alldivs.forEach((div) => {
+    div.addEventListener("click", () => {
+        const id = div.id; // Get the ID of the clicked element
+        window.location.href = `excess.html?id=${id}`;
+    });
+});
+
+
+    </script>
+</body>
+</html>
